@@ -1,0 +1,433 @@
+/* ═══════════════════════════════════════════════════════════════
+   Gemini TTS v2.0 — Extension Styles
+   Cat Café dark theme — inspired by SillyTavern's aesthetic
+   ═══════════════════════════════════════════════════════════════ */
+
+:root {
+  --gtts-bg:        #0d0d1a;
+  --gtts-bg2:       #13132a;
+  --gtts-border:    rgba(110, 86, 255, 0.22);
+  --gtts-accent:    #7c5cfc;
+  --gtts-accent2:   #5ce8b5;
+  --gtts-text:      #e0d8ff;
+  --gtts-muted:     rgba(200, 184, 255, 0.55);
+  --gtts-input-bg:  rgba(255, 255, 255, 0.045);
+  --gtts-danger:    #f87171;
+  --gtts-ok:        #4ade80;
+  --gtts-warn:      #fbbf24;
+  --gtts-radius:    10px;
+  --gtts-radius-sm: 6px;
+}
+
+/* ── Panel ──────────────────────────────────────────────────── */
+.gtts-panel {
+  background: linear-gradient(150deg, var(--gtts-bg) 0%, var(--gtts-bg2) 100%);
+  border: 1px solid var(--gtts-border);
+  border-radius: var(--gtts-radius);
+  margin: 8px 0 4px;
+  overflow: hidden;
+  box-shadow: 0 6px 32px rgba(0,0,0,0.5), inset 0 1px 0 rgba(255,255,255,0.04);
+  font-family: 'Segoe UI', system-ui, sans-serif;
+  font-size: 13px;
+  color: var(--gtts-text);
+}
+
+/* ── Header ─────────────────────────────────────────────────── */
+.gtts-header {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 9px 13px;
+  background: linear-gradient(90deg,
+    rgba(124,92,252,0.18) 0%,
+    rgba(92,232,181,0.07) 100%);
+  border-bottom: 1px solid var(--gtts-border);
+  cursor: pointer;
+  user-select: none;
+  transition: background 0.2s;
+}
+.gtts-header:hover {
+  background: linear-gradient(90deg,
+    rgba(124,92,252,0.26) 0%,
+    rgba(92,232,181,0.11) 100%);
+}
+.gtts-logo  { font-size: 1.15em; }
+.gtts-title { color: #c4b0ff; font-weight: 700; font-size: 0.93em; letter-spacing: .04em; flex: 1; }
+.gtts-badge {
+  font-size: 0.65em; color: rgba(196,176,255,.4);
+  background: rgba(124,92,252,.12);
+  border: 1px solid rgba(124,92,252,.2);
+  border-radius: 4px; padding: 1px 5px; font-style: italic;
+}
+.gtts-header-right { margin-left: auto; }
+
+/* ── Body ───────────────────────────────────────────────────── */
+.gtts-body {
+  padding: 13px 14px;
+  display: flex;
+  flex-direction: column;
+  gap: 11px;
+}
+
+/* ── Section ────────────────────────────────────────────────── */
+.gtts-section { display: flex; flex-direction: column; gap: 5px; }
+
+.gtts-label {
+  font-size: .75em;
+  font-weight: 700;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+  color: var(--gtts-muted);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.gtts-hint {
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0;
+  opacity: .65;
+  font-size: .88em;
+  font-style: italic;
+}
+
+/* ── Inputs ─────────────────────────────────────────────────── */
+.gtts-input {
+  background: var(--gtts-input-bg);
+  border: 1px solid rgba(124,92,252,.28);
+  border-radius: var(--gtts-radius-sm);
+  color: var(--gtts-text);
+  padding: 6px 10px;
+  font-size: .85em;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color .2s, box-shadow .2s;
+}
+.gtts-input:focus {
+  border-color: rgba(124,92,252,.75);
+  box-shadow: 0 0 0 2px rgba(124,92,252,.12);
+}
+.gtts-input::placeholder { color: rgba(200,184,255,.28); font-style: italic; }
+
+.gtts-select {
+  background: rgba(15,13,32,.9);
+  border: 1px solid rgba(124,92,252,.28);
+  border-radius: var(--gtts-radius-sm);
+  color: var(--gtts-text);
+  padding: 6px 10px;
+  font-size: .85em;
+  width: 100%;
+  box-sizing: border-box;
+  outline: none;
+  cursor: pointer;
+  transition: border-color .2s;
+}
+.gtts-select:focus { border-color: rgba(124,92,252,.7); }
+
+/* ── API Key row ────────────────────────────────────────────── */
+.gtts-key-row { display: flex; gap: 5px; align-items: center; }
+.gtts-key-row .gtts-input { flex: 1; }
+
+.gtts-key-msg {
+  font-size: .76em;
+  min-height: 1em;
+  transition: color .25s;
+}
+.gtts-key-msg.ok   { color: var(--gtts-ok); }
+.gtts-key-msg.err  { color: var(--gtts-danger); }
+.gtts-key-msg.warn { color: var(--gtts-warn); }
+
+/* ── Buttons ────────────────────────────────────────────────── */
+.gtts-pill-btn {
+  background: rgba(124,92,252,.18);
+  border: 1px solid rgba(124,92,252,.38);
+  border-radius: 20px;
+  color: #c4b0ff;
+  padding: 4px 12px;
+  font-size: .77em;
+  font-weight: 600;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background .18s, border-color .18s;
+}
+.gtts-pill-btn:hover {
+  background: rgba(124,92,252,.32);
+  border-color: rgba(124,92,252,.7);
+}
+
+.gtts-icon-btn {
+  background: transparent;
+  border: 1px solid rgba(124,92,252,.25);
+  border-radius: var(--gtts-radius-sm);
+  color: #9a8fcf;
+  padding: 4px 8px;
+  font-size: .8em;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: background .18s, color .18s;
+}
+.gtts-icon-btn:hover {
+  background: rgba(124,92,252,.2);
+  color: #c4b0ff;
+}
+
+/* ── Toggle Switch ──────────────────────────────────────────── */
+.gtts-switch {
+  position: relative;
+  display: inline-block;
+  width: 38px; height: 21px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.gtts-switch input { opacity: 0; width: 0; height: 0; }
+.gtts-knob {
+  position: absolute;
+  inset: 0;
+  background: rgba(50,45,90,.6);
+  border: 1px solid rgba(124,92,252,.2);
+  border-radius: 21px;
+  transition: background .28s;
+}
+.gtts-knob::before {
+  content: '';
+  position: absolute;
+  width: 15px; height: 15px;
+  left: 2px; top: 2px;
+  background: #ddd;
+  border-radius: 50%;
+  transition: transform .28s;
+  box-shadow: 0 1px 4px rgba(0,0,0,.45);
+}
+.gtts-switch input:checked + .gtts-knob {
+  background: linear-gradient(135deg, var(--gtts-accent), var(--gtts-accent2));
+  border-color: transparent;
+}
+.gtts-switch input:checked + .gtts-knob::before { transform: translateX(17px); }
+
+/* ── Inline toggles ─────────────────────────────────────────── */
+.gtts-toggles     { gap: 7px; }
+.gtts-inline-toggle {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 7px 9px;
+  border-radius: var(--gtts-radius-sm);
+  border: 1px solid rgba(124,92,252,.1);
+  background: rgba(255,255,255,.02);
+  cursor: pointer;
+  font-size: .84em;
+  color: var(--gtts-muted);
+  transition: background .18s;
+}
+.gtts-inline-toggle:hover { background: rgba(124,92,252,.07); }
+
+/* ── Radio Stack ────────────────────────────────────────────── */
+.gtts-radio-stack { display: flex; flex-direction: column; gap: 5px; }
+.gtts-radio-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 8px 10px;
+  border-radius: var(--gtts-radius-sm);
+  border: 1px solid rgba(124,92,252,.13);
+  cursor: pointer;
+  transition: background .18s, border-color .18s;
+}
+.gtts-radio-row:hover {
+  background: rgba(124,92,252,.09);
+  border-color: rgba(124,92,252,.3);
+}
+.gtts-radio-row input[type="radio"] {
+  accent-color: var(--gtts-accent);
+  width: 14px; height: 14px;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.gtts-radio-row:has(input:checked) {
+  background: rgba(124,92,252,.12);
+  border-color: rgba(124,92,252,.45);
+}
+.gtts-radio-content { display: flex; flex-direction: column; gap: 1px; }
+.gtts-radio-title { font-size: .86em; font-weight: 600; color: var(--gtts-text); }
+.gtts-radio-sub   { font-size: .74em; color: var(--gtts-muted); font-style: italic; }
+
+/* ── Range slider ───────────────────────────────────────────── */
+.gtts-range {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 4px;
+  border-radius: 4px;
+  background: rgba(124,92,252,.2);
+  outline: none;
+}
+.gtts-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--gtts-accent), var(--gtts-accent2));
+  cursor: pointer;
+  box-shadow: 0 1px 4px rgba(0,0,0,.4);
+  transition: transform .15s;
+}
+.gtts-range::-webkit-slider-thumb:hover { transform: scale(1.25); }
+
+/* ── Voice Map ──────────────────────────────────────────────── */
+.gtts-vmhead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.gtts-vmap {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  max-height: 240px;
+  overflow-y: auto;
+  padding-right: 3px;
+}
+.gtts-vmap::-webkit-scrollbar        { width: 3px; }
+.gtts-vmap::-webkit-scrollbar-track  { background: transparent; }
+.gtts-vmap::-webkit-scrollbar-thumb  { background: rgba(124,92,252,.3); border-radius: 3px; }
+
+.gtts-vmap-row {
+  border-radius: var(--gtts-radius-sm);
+  background: rgba(255,255,255,.025);
+  border: 1px solid rgba(255,255,255,.035);
+  overflow: hidden;
+  transition: background .18s;
+}
+.gtts-vmap-row:hover { background: rgba(124,92,252,.06); }
+
+.gtts-vmap-name {
+  font-size: .79em;
+  color: #b0a8d8;
+  padding: 5px 8px 0;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.gtts-vmap-controls {
+  display: flex;
+  gap: 4px;
+  align-items: center;
+  padding: 3px 6px 5px;
+}
+
+.gtts-vmap-sel {
+  flex: 1;
+  background: rgba(15,13,32,.8);
+  border: 1px solid rgba(124,92,252,.2);
+  border-radius: 5px;
+  color: #ccc8f0;
+  padding: 3px 6px;
+  font-size: .77em;
+  outline: none;
+  cursor: pointer;
+}
+
+.gtts-vmap-play    { font-size: .72em; padding: 3px 7px; }
+.gtts-vmap-expand  { font-size: .72em; padding: 3px 7px; }
+
+.gtts-vmap-style-row {
+  padding: 0 6px 6px;
+}
+.gtts-vmap-style-input {
+  font-size: .78em;
+  padding: 4px 8px;
+}
+
+.gtts-empty {
+  text-align: center;
+  padding: 14px;
+  color: rgba(200,184,255,.3);
+  font-size: .8em;
+  font-style: italic;
+}
+
+/* ── Playbar ────────────────────────────────────────────────── */
+.gtts-playbar {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 7px 10px;
+  background: rgba(0,0,0,.25);
+  border-radius: var(--gtts-radius-sm);
+  border: 1px solid rgba(124,92,252,.1);
+}
+
+.gtts-stop-btn {
+  background: rgba(248,113,113,.18);
+  border: 1px solid rgba(248,113,113,.35);
+  border-radius: var(--gtts-radius-sm);
+  color: #fca5a5;
+  padding: 4px 12px;
+  font-size: .78em;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background .18s;
+}
+.gtts-stop-btn:hover { background: rgba(248,113,113,.32); }
+
+/* ── Waveform animation ─────────────────────────────────────── */
+.gtts-waveform {
+  display: flex;
+  align-items: center;
+  gap: 3px;
+  height: 18px;
+  opacity: .3;
+  transition: opacity .3s;
+}
+.gtts-waveform.gtts-wave-active { opacity: 1; }
+
+.gtts-wave-bar {
+  width: 3px;
+  height: 6px;
+  background: linear-gradient(to top, var(--gtts-accent), var(--gtts-accent2));
+  border-radius: 2px;
+  animation: gtts-wave-bounce 1s ease-in-out infinite;
+}
+.gtts-wave-bar:nth-child(1) { animation-delay: 0s; }
+.gtts-wave-bar:nth-child(2) { animation-delay: 0.15s; }
+.gtts-wave-bar:nth-child(3) { animation-delay: 0.30s; }
+.gtts-wave-bar:nth-child(4) { animation-delay: 0.45s; }
+.gtts-wave-bar:nth-child(5) { animation-delay: 0.60s; }
+
+@keyframes gtts-wave-bounce {
+  0%, 100% { height: 4px;  opacity: .5; }
+  50%       { height: 16px; opacity: 1;  }
+}
+
+.gtts-waveform:not(.gtts-wave-active) .gtts-wave-bar {
+  animation: none;
+  height: 4px;
+}
+
+.gtts-status-txt {
+  flex: 1;
+  font-size: .75em;
+  color: var(--gtts-muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  font-style: italic;
+}
+
+/* ── Per-message TTS button ─────────────────────────────────── */
+.gtts-msg-btn {
+  cursor: pointer;
+  font-size: .85em;
+  opacity: 0.55;
+  padding: 2px 5px;
+  border-radius: 4px;
+  transition: opacity .18s, transform .15s, background .18s;
+  line-height: 1;
+}
+.gtts-msg-btn:hover {
+  opacity: 1;
+  transform: scale(1.18);
+  background: rgba(124,92,252,.18);
+}
