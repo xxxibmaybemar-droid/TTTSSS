@@ -1,0 +1,11 @@
+{
+  "display_name": "Gemini TTS",
+  "version": "2.0.0",
+  "js": "index.js",
+  "css": "style.css",
+  "author": "gemini-tts-extension",
+  "description": "High-quality TTS using Google Gemini models. Supports quotes-only or full narration mode, per-character voice mapping, style prompts, and auto-read.",
+  "loading_order": 15,
+  "homePage": "",
+  "minimum_client_version": "1.17.0"
+}
